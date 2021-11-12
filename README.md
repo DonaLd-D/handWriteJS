@@ -65,5 +65,28 @@ let deepClone=(data)=>{
 
 ## 事件总线
 ```js
-
+class EventEmitter{
+    constructor(){
+        this.cache={}
+    }
+    on(name,fn){
+        if(this.cache.hasOwnProperty(name)){
+            this.cache.push(fn)
+        }else{
+            this.cache[name]=[fn]
+        }
+    }
+    off(name,fn){
+        if(this.cache[name]&&this.cache[name].indexOf(fn)>=0){
+            this.cache[name]=this.cache[name].filter(f=>f!=fn)
+        }
+    }
+    emit(name,fn){
+        if(!this.cache[name]) return `Zero function to excute!`
+        let tasks=this.cache[name].slice()
+        for(let f of tasks){
+            if(f==fn) f()
+        }
+    }
+}
 ```
