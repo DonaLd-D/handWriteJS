@@ -62,3 +62,8 @@ let deepClone=(data)=>{
     return newData
 }
 ```
+
+## 事件总线
+```js
+
+```
