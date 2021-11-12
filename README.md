@@ -15,3 +15,17 @@ console.log(typeOf(true))   //boolean
 console.log(typeOf(''))   //string
 console.log(typeOf(new Date()))   //date
 ```
+
+##  数组去重
+```js
+let unique=(arr)=>{
+    let newArr=[]
+    arr.forEach(item=>{
+        if(newArr.indexOf(item)==-1) newArr.push(item)
+    })
+    return newArr
+}
+
+let res=unique([1,2,34,1,4,8,67,null,null,'q','q',34,undefined,undefined,true,true])
+console.log(res)
+```
