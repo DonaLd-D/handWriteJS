@@ -42,3 +42,23 @@ let flatArr=(arr,newArr=[])=>{
 let res=flatArr([1,[23,['qwerty',[null,[undefined,[true]]]]]])
 console.log(res)
 ```
+
+## 深拷贝（简单实现）
+```js
+let isObj=(data)=>typeof data=='object'
+
+let deepClone=(data)=>{
+    if(!isObj(data)) return
+    let newData=Array.isArray(data)?[]:{}
+    for(let key in data){
+        if(data.hasOwnProperty(key)){
+            if(isObj(data[key])){
+                newData[key]=deepClone(data[key])
+            }else{
+                newData[key]=data[key]
+            }
+        }
+    }
+    return newData
+}
+```
