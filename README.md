@@ -29,3 +29,16 @@ let unique=(arr)=>{
 let res=unique([1,2,34,1,4,8,67,null,null,'q','q',34,undefined,undefined,true,true])
 console.log(res)
 ```
+
+## 数组扁平化
+```js
+let flatArr=(arr,newArr=[])=>{
+    arr.forEach(item=>{
+        Array.isArray(item)?flatArr(item,newArr):newArr.push(item)
+    })
+    return newArr
+}
+
+let res=flatArr([1,[23,['qwerty',[null,[undefined,[true]]]]]])
+console.log(res)
+```
