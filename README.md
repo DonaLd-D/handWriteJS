@@ -120,4 +120,26 @@ let res=parseParam('www.baidu.com?name=baidu&password=123&link&to=nothing&name=n
 console.log(res)
 ```
 
+## 防抖函数 节流函数
+```js
+//  防抖函数
+let debounce=(func,wait)=>{
+    let timeID
+    return function(){
+        if(timeID) clearTimeout(timeID)
+        timeID=setTimeout(func,wait)
+    }
+}
+
+//  节流函数
+let throttle=(func,wait)=>{
+    let pre=0
+    return function(){
+        let now=+new Date()
+        if(now-pre>=wait) func()
+        pre=+new Date()
+    }
+}
+```
+
 `未完待续`
