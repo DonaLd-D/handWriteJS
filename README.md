@@ -119,3 +119,5 @@ let parseParam=(url)=>{
 let res=parseParam('www.baidu.com?name=baidu&password=123&link&to=nothing&name=netease')
 console.log(res)
 ```
+
+`未完待续`
