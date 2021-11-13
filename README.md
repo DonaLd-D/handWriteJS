@@ -93,5 +93,29 @@ class EventEmitter{
 
 ## 解析url参数为对象
 ```js
+let parseParam=(url)=>{
+    let index=url.indexOf('?')
+    let paramStr=url.substr(index+1)
+    let paramArr=paramStr.split('&')
+    let paramObj={}
 
+    paramArr.forEach((param,index)=>{
+        if(param.indexOf('=')>=0){
+            let [key,value]=paramArr[index].split('=')
+            value=decodeURIComponent(value)
+            value=isNaN(Number(value))?value:parseFloat(value)
+            if(paramObj[key]){
+                paramObj[key]=[...paramObj[key],value]
+            }else{
+                paramObj[key]=value
+            }
+        }else{
+            paramObj[param]=null
+        }
+    })
+    return paramObj
+}
+
+let res=parseParam('www.baidu.com?name=name&password=123&link&to=nothing')
+console.log(res)
 ```
