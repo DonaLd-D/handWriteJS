@@ -105,7 +105,7 @@ let parseParam=(url)=>{
             value=decodeURIComponent(value)
             value=isNaN(Number(value))?value:parseFloat(value)
             if(paramObj[key]){
-                paramObj[key]=[...paramObj[key],value]
+                Array.isArray(paramObj[key])?paramObj[key].push(value):paramObj[key]=[paramObj[key],value]
             }else{
                 paramObj[key]=value
             }
@@ -116,6 +116,6 @@ let parseParam=(url)=>{
     return paramObj
 }
 
-let res=parseParam('www.baidu.com?name=name&password=123&link&to=nothing')
+let res=parseParam('www.baidu.com?name=baidu&password=123&link&to=nothing&name=netease')
 console.log(res)
 ```
