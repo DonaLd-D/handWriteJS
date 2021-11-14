@@ -265,17 +265,31 @@ function resolvePromise(promise2,x,resolve,reject){
 
 ## Promise.solve()
 ```js
-
+Promise.solve=function(value){
+    return new Promise((resolve,reject)=>{
+        resolve(value)
+    })
+}
 ```
 
 ## Promise.reject()
 ```js
-
+Promise.reject=function(reason){
+    return new Promise((resolve,reject)=>{
+        reject(reason)
+    })
+}
 ```
 
 ## Promise.race()
 ```js
-
+Promise.race = function(promises){
+  return new Promise((resolve,reject)=>{
+    for(let i=0;i<promises.length;i++){
+      promises[i].then(resolve,reject)
+    };
+  })
+}
 ```
 
 ## Promise.all()
