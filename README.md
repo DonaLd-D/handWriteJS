@@ -48,7 +48,7 @@ console.log(res)
 let isObj=(data)=>typeof data=='object'
 
 let deepClone=(data)=>{
-    if(!isObj(data)) return
+    if(!isObj(data)) return data
     let newData=Array.isArray(data)?[]:{}
     for(let key in data){
         if(data.hasOwnProperty(key)){
