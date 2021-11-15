@@ -14,6 +14,7 @@ console.log(typeOf(1))  //number
 console.log(typeOf(true))   //boolean
 console.log(typeOf(''))   //string
 console.log(typeOf(new Date()))   //date
+console.log(new Promise((resolve,reject)=>{}))  //promise
 ```
 
 ##  数组去重
@@ -143,6 +144,13 @@ let throttle=(func,wait)=>{
 ```
 
 ## Promise
+- Promise.all()
+- Promise.race()
+- Promise.allSettled()
+- Promise.any()
+- Promise.resolve()
+- Promise.reject()
+- Promise.try()
 ```js
 class Promise{
     constructor(executor){
