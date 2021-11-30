@@ -14,7 +14,7 @@ console.log(typeOf(1))  //number
 console.log(typeOf(true))   //boolean
 console.log(typeOf(''))   //string
 console.log(typeOf(new Date()))   //date
-console.log(new Promise((resolve,reject)=>{}))  //promise
+console.log(typeof(new Promise((resolve,reject)=>{})))  //promise
 ```
 
 ##  数组去重
