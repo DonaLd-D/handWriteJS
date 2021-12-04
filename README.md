@@ -17,7 +17,7 @@ console.log(typeOf(new Date()))   //date
 console.log(typeOf(new Promise((resolve,reject)=>{})))  //promise
 ```
 
-##  数组去重
+##  数组去重(简单实现)
 ```js
 let unique=(arr)=>{
     let newArr=[]
