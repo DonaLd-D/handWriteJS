@@ -44,6 +44,9 @@ let res=flatArr([1,[23,['qwerty',[null,[undefined,[true]]]]]])
 console.log(res)
 ```
 ## 根据包名在指定命名空间创建对象
+- 输入：namespace({a: {test: 1, b: 2}}, 'a.b.c.d')
+- 输出：{a: {test: 1, b: {c: {d: {}}}}}
+
 ```js
 function namespace(oNamespace, sPackage) {
     let sPArr=sPackage.split('.')
