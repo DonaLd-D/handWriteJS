@@ -43,6 +43,24 @@ let flatArr=(arr,newArr=[])=>{
 let res=flatArr([1,[23,['qwerty',[null,[undefined,[true]]]]]])
 console.log(res)
 ```
+## 根据包名在指定命名空间创建对象
+```js
+function namespace(oNamespace, sPackage) {
+    let sPArr=sPackage.split('.')
+    let oNS=oNamespace
+    for(let i=0;i<sPArr.length;i++){
+        if(oNS.hasOwnProperty(sPArr[i])){
+            if(oNS[sPArr[i]] instanceof Object){
+                   oNS=oNS[sPArr[i]]
+               }
+        }else{
+            oNS[sPArr[i]]={}
+            oNS=oNS[sPArr[i]]
+        }
+    }
+    return oNamespace
+}
+```
 
 ## 深拷贝（简单实现）
 ```js
